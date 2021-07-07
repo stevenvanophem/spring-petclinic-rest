@@ -19,9 +19,9 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.domain.owner.Owner;
 import org.springframework.samples.petclinic.domain.pet.Pet;
 import org.springframework.samples.petclinic.domain.pettype.PetType;
-import org.springframework.samples.petclinic.model.Specialty;
-import org.springframework.samples.petclinic.model.Vet;
-import org.springframework.samples.petclinic.model.Visit;
+import org.springframework.samples.petclinic.domain.speciality.Specialty;
+import org.springframework.samples.petclinic.domain.vet.Vet;
+import org.springframework.samples.petclinic.domain.visit.Visit;
 
 import java.util.Collection;
 

@@ -1,17 +1,11 @@
-package org.springframework.samples.petclinic.model;
-
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+package org.springframework.samples.petclinic.domain.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.samples.petclinic.domain.role.Role;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")

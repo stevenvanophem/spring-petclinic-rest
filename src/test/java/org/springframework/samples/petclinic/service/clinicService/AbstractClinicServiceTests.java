@@ -20,9 +20,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.domain.owner.Owner;
 import org.springframework.samples.petclinic.domain.pet.Pet;
 import org.springframework.samples.petclinic.domain.pettype.PetType;
-import org.springframework.samples.petclinic.model.Specialty;
-import org.springframework.samples.petclinic.model.Vet;
-import org.springframework.samples.petclinic.model.Visit;
+import org.springframework.samples.petclinic.domain.speciality.Specialty;
+import org.springframework.samples.petclinic.domain.vet.Vet;
+import org.springframework.samples.petclinic.domain.visit.Visit;
 import org.springframework.samples.petclinic.service.ClinicService;
 import org.springframework.samples.petclinic.util.EntityUtils;
 import org.springframework.test.context.ContextConfiguration;
@@ -169,7 +169,7 @@ public abstract class AbstractClinicServiceTests {
     public void shouldFindVets() {
         Collection<Vet> vets = this.clinicService.findVets();
 
-        Vet vet = EntityUtils.getById(vets, Vet.class, 3);
+        Vet vet = EntityUtils.getVetById(vets, Vet.class, 3);
         assertThat(vet.getLastName()).isEqualTo("Douglas");
         assertThat(vet.getNrOfSpecialties()).isEqualTo(2);
         assertThat(vet.getSpecialties().get(0).getName()).isEqualTo("dentistry");
@@ -234,9 +234,9 @@ public abstract class AbstractClinicServiceTests {
     @Test
     public void shouldFindAllVisits(){
         Collection<Visit> visits = this.clinicService.findAllVisits();
-        Visit visit1 = EntityUtils.getById(visits, Visit.class, 1);
+        Visit visit1 = EntityUtils.getVisitById(visits, Visit.class, 1);
         assertThat(visit1.getPet().getName()).isEqualTo("Samantha");
-        Visit visit3 = EntityUtils.getById(visits, Visit.class, 3);
+        Visit visit3 = EntityUtils.getVisitById(visits, Visit.class, 3);
         assertThat(visit3.getPet().getName()).isEqualTo("Max");
     }
 
@@ -422,9 +422,9 @@ public abstract class AbstractClinicServiceTests {
     @Test
     public void shouldFindAllSpecialtys(){
         Collection<Specialty> specialties = this.clinicService.findAllSpecialties();
-        Specialty specialty1 = EntityUtils.getById(specialties, Specialty.class, 1);
+        Specialty specialty1 = EntityUtils.getSpecialtyById(specialties, Specialty.class, 1);
         assertThat(specialty1.getName()).isEqualTo("radiology");
-        Specialty specialty3 = EntityUtils.getById(specialties, Specialty.class, 3);
+        Specialty specialty3 = EntityUtils.getSpecialtyById(specialties, Specialty.class, 3);
         assertThat(specialty3.getName()).isEqualTo("dentistry");
     }
 

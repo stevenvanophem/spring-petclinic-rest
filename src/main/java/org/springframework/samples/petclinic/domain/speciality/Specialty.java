@@ -13,20 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.model;
+package org.springframework.samples.petclinic.domain.speciality;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.samples.petclinic.domain.vet.Vet;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * Simple JavaBean domain object representing an person.
+ * Models a {@link Vet Vet's} specialty (for example, dentistry).
  *
- * @author Ken Krebs
+ * @author Juergen Hoeller
  */
-@MappedSuperclass
-public class Person {
+@Entity
+@Table(name = "specialties")
+public class Specialty {
+
+    @Column(name = "name")
+    @NotEmpty
+    private String name;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,29 +50,12 @@ public class Person {
         return this.id == null;
     }
 
-    @Column(name = "first_name")
-    @NotEmpty
-    protected String firstName;
-
-    @Column(name = "last_name")
-    @NotEmpty
-    protected String lastName;
-
-    public String getFirstName() {
-        return this.firstName;
+    public String getName() {
+        return this.name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
 
 }

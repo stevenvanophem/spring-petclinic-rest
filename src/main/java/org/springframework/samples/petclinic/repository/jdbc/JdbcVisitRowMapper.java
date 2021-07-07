@@ -17,7 +17,7 @@ package org.springframework.samples.petclinic.repository.jdbc;
 
 
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.samples.petclinic.model.Visit;
+import org.springframework.samples.petclinic.domain.visit.Visit;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

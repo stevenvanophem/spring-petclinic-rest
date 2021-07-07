@@ -1,17 +1,13 @@
-package org.springframework.samples.petclinic.model;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+package org.springframework.samples.petclinic.domain.role;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.samples.petclinic.domain.user.User;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "roles" ,uniqueConstraints = @UniqueConstraint(columnNames = {"username", "role"}))
-public class Role extends BaseEntity {
+public class Role {
 
     @ManyToOne
     @JoinColumn(name = "username")
@@ -20,6 +16,22 @@ public class Role extends BaseEntity {
 
     @Column( name = "role")
     private String name;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    @JsonIgnore
+    public boolean isNew() {
+        return this.id == null;
+    }
 
     public User getUser() {
         return user;

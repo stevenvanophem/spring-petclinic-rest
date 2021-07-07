@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import org.springframework.samples.petclinic.domain.pet.Pet;
-import org.springframework.samples.petclinic.model.Visit;
+import org.springframework.samples.petclinic.domain.visit.Visit;
 
 import java.io.IOException;
 import java.text.ParseException;

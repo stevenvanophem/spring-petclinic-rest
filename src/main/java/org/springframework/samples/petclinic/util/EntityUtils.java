@@ -20,6 +20,9 @@ import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.samples.petclinic.domain.owner.Owner;
 import org.springframework.samples.petclinic.domain.pet.Pet;
 import org.springframework.samples.petclinic.domain.pettype.PetType;
+import org.springframework.samples.petclinic.domain.speciality.Specialty;
+import org.springframework.samples.petclinic.domain.vet.Vet;
+import org.springframework.samples.petclinic.domain.visit.Visit;
 import org.springframework.samples.petclinic.model.BaseEntity;
 
 import java.util.Collection;
@@ -64,6 +67,26 @@ public abstract class EntityUtils {
         throw new ObjectRetrievalFailureException(entityClass, entityId);
     }
 
+    public static Visit getVisitById(Collection<Visit> entities, Class<Visit> entityClass, int entityId)
+        throws ObjectRetrievalFailureException {
+        for (Visit entity : entities) {
+            if (entity.getId() == entityId && entityClass.isInstance(entity)) {
+                return entity;
+            }
+        }
+        throw new ObjectRetrievalFailureException(entityClass, entityId);
+    }
+
+    public static Vet getVetById(Collection<Vet> entities, Class<Vet> entityClass, int entityId)
+        throws ObjectRetrievalFailureException {
+        for (Vet entity : entities) {
+            if (entity.getId() == entityId && entityClass.isInstance(entity)) {
+                return entity;
+            }
+        }
+        throw new ObjectRetrievalFailureException(entityClass, entityId);
+    }
+
     public static Pet getPetById(Collection<Pet> entities, Class<Pet> entityClass, int entityId)
         throws ObjectRetrievalFailureException {
         for (Pet entity : entities) {
@@ -77,6 +100,16 @@ public abstract class EntityUtils {
     public static PetType getPetTypeById(Collection<PetType> entities, Class<PetType> entityClass, int entityId)
         throws ObjectRetrievalFailureException {
         for (PetType entity : entities) {
+            if (entity.getId() == entityId && entityClass.isInstance(entity)) {
+                return entity;
+            }
+        }
+        throw new ObjectRetrievalFailureException(entityClass, entityId);
+    }
+
+    public static Specialty getSpecialtyById(Collection<Specialty> entities, Class<Specialty> entityClass, int entityId)
+        throws ObjectRetrievalFailureException {
+        for (Specialty entity : entities) {
             if (entity.getId() == entityId && entityClass.isInstance(entity)) {
                 return entity;
             }

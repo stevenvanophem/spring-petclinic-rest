@@ -16,16 +16,15 @@
 
 package org.springframework.samples.petclinic.repository.jpa;
 
-import java.util.Collection;
+import org.springframework.context.annotation.Profile;
+import org.springframework.dao.DataAccessException;
+import org.springframework.samples.petclinic.domain.speciality.Specialty;
+import org.springframework.samples.petclinic.repository.SpecialtyRepository;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
-import org.springframework.context.annotation.Profile;
-import org.springframework.dao.DataAccessException;
-import org.springframework.samples.petclinic.model.Specialty;
-import org.springframework.samples.petclinic.repository.SpecialtyRepository;
-import org.springframework.stereotype.Repository;
+import java.util.Collection;
 
 /**
  * @author Vitaliy Fedoriv
@@ -35,7 +34,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Profile("jpa")
 public class JpaSpecialtyRepositoryImpl implements SpecialtyRepository {
-	
+
     @PersistenceContext
     private EntityManager em;
 
