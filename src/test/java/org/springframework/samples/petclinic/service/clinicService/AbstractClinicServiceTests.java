@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.domain.owner.Owner;
 import org.springframework.samples.petclinic.domain.pet.Pet;
-import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.domain.pettype.PetType;
 import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
@@ -137,7 +137,7 @@ public abstract class AbstractClinicServiceTests {
         Pet pet = new Pet();
         pet.setName("bowser");
         Collection<PetType> types = this.clinicService.findPetTypes();
-        pet.setType(EntityUtils.getById(types, PetType.class, 2));
+        pet.setType(EntityUtils.getPetTypeById(types, PetType.class, 2));
         pet.setBirthDate(new Date());
         owner6.addPet(pet);
         assertThat(owner6.getPets().size()).isEqualTo(found + 1);
@@ -366,9 +366,9 @@ public abstract class AbstractClinicServiceTests {
     @Test
     public void shouldFindAllPetTypes(){
         Collection<PetType> petTypes = this.clinicService.findAllPetTypes();
-        PetType petType1 = EntityUtils.getById(petTypes, PetType.class, 1);
+        PetType petType1 = EntityUtils.getPetTypeById(petTypes, PetType.class, 1);
         assertThat(petType1.getName()).isEqualTo("cat");
-        PetType petType3 = EntityUtils.getById(petTypes, PetType.class, 3);
+        PetType petType3 = EntityUtils.getPetTypeById(petTypes, PetType.class, 3);
         assertThat(petType3.getName()).isEqualTo("lizard");
     }
 

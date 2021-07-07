@@ -19,6 +19,7 @@ package org.springframework.samples.petclinic.util;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.samples.petclinic.domain.owner.Owner;
 import org.springframework.samples.petclinic.domain.pet.Pet;
+import org.springframework.samples.petclinic.domain.pettype.PetType;
 import org.springframework.samples.petclinic.model.BaseEntity;
 
 import java.util.Collection;
@@ -66,6 +67,16 @@ public abstract class EntityUtils {
     public static Pet getPetById(Collection<Pet> entities, Class<Pet> entityClass, int entityId)
         throws ObjectRetrievalFailureException {
         for (Pet entity : entities) {
+            if (entity.getId() == entityId && entityClass.isInstance(entity)) {
+                return entity;
+            }
+        }
+        throw new ObjectRetrievalFailureException(entityClass, entityId);
+    }
+
+    public static PetType getPetTypeById(Collection<PetType> entities, Class<PetType> entityClass, int entityId)
+        throws ObjectRetrievalFailureException {
+        for (PetType entity : entities) {
             if (entity.getId() == entityId && entityClass.isInstance(entity)) {
                 return entity;
             }

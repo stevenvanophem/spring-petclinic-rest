@@ -26,7 +26,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.samples.petclinic.domain.owner.Owner;
 import org.springframework.samples.petclinic.domain.pet.Pet;
-import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.domain.pettype.PetType;
 import org.springframework.samples.petclinic.model.Visit;
 import org.springframework.samples.petclinic.repository.OwnerRepository;
 import org.springframework.samples.petclinic.repository.PetRepository;
@@ -139,7 +139,7 @@ public class JdbcPetRepositoryImpl implements PetRepository {
 				new HashMap<String, Object>(),
 				BeanPropertyRowMapper.newInstance(Owner.class));
 		for (JdbcPet jdbcPet : jdbcPets) {
-			jdbcPet.setType(EntityUtils.getById(petTypes, PetType.class, jdbcPet.getTypeId()));
+			jdbcPet.setType(EntityUtils.getPetTypeById(petTypes, PetType.class, jdbcPet.getTypeId()));
 			jdbcPet.setOwner(EntityUtils.getOwnerById(owners, Owner.class, jdbcPet.getOwnerId()));
 			// TODO add visits
 			pets.add(jdbcPet);
