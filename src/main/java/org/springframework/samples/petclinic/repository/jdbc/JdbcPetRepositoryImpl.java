@@ -140,7 +140,7 @@ public class JdbcPetRepositoryImpl implements PetRepository {
 				BeanPropertyRowMapper.newInstance(Owner.class));
 		for (JdbcPet jdbcPet : jdbcPets) {
 			jdbcPet.setType(EntityUtils.getById(petTypes, PetType.class, jdbcPet.getTypeId()));
-			jdbcPet.setOwner(EntityUtils.getById(owners, Owner.class, jdbcPet.getOwnerId()));
+			jdbcPet.setOwner(EntityUtils.getOwnerById(owners, Owner.class, jdbcPet.getOwnerId()));
 			// TODO add visits
 			pets.add(jdbcPet);
 		}

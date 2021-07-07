@@ -334,9 +334,9 @@ public abstract class AbstractClinicServiceTests {
     @Test
     public void shouldFindAllOwners(){
         Collection<Owner> owners = this.clinicService.findAllOwners();
-        Owner owner1 = EntityUtils.getById(owners, Owner.class, 1);
+        Owner owner1 = EntityUtils.getOwnerById(owners, Owner.class, 1);
         assertThat(owner1.getFirstName()).isEqualTo("George");
-        Owner owner3 = EntityUtils.getById(owners, Owner.class, 3);
+        Owner owner3 = EntityUtils.getOwnerById(owners, Owner.class, 3);
         assertThat(owner3.getFirstName()).isEqualTo("Eduardo");
     }
 
