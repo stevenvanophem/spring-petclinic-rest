@@ -1,4 +1,4 @@
-package org.springframework.samples.petclinic.application;
+package org.springframework.samples.petclinic.application.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.domain.role.Role;

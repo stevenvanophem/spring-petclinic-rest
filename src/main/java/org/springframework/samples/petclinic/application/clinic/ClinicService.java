@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.application;
+package org.springframework.samples.petclinic.application.clinic;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.domain.owner.Owner;

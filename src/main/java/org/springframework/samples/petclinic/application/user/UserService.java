@@ -1,4 +1,4 @@
-package org.springframework.samples.petclinic.application;
+package org.springframework.samples.petclinic.application.user;
 
 import org.springframework.samples.petclinic.domain.user.User;
 
