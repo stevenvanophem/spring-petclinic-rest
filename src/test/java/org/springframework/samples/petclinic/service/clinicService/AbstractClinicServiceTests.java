@@ -17,8 +17,12 @@ package org.springframework.samples.petclinic.service.clinicService;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.samples.petclinic.model.*;
-import org.springframework.samples.petclinic.owner.Owner;
+import org.springframework.samples.petclinic.domain.owner.Owner;
+import org.springframework.samples.petclinic.domain.pet.Pet;
+import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.model.Specialty;
+import org.springframework.samples.petclinic.model.Vet;
+import org.springframework.samples.petclinic.model.Visit;
 import org.springframework.samples.petclinic.service.ClinicService;
 import org.springframework.samples.petclinic.util.EntityUtils;
 import org.springframework.test.context.ContextConfiguration;
@@ -201,9 +205,9 @@ public abstract class AbstractClinicServiceTests {
     @Test
     public void shouldFindAllPets(){
         Collection<Pet> pets = this.clinicService.findAllPets();
-        Pet pet1 = EntityUtils.getById(pets, Pet.class, 1);
+        Pet pet1 = EntityUtils.getPetById(pets, Pet.class, 1);
         assertThat(pet1.getName()).isEqualTo("Leo");
-        Pet pet3 = EntityUtils.getById(pets, Pet.class, 3);
+        Pet pet3 = EntityUtils.getPetById(pets, Pet.class, 3);
         assertThat(pet3.getName()).isEqualTo("Rosy");
     }
 

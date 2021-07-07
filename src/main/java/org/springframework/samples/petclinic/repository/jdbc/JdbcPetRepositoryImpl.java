@@ -24,10 +24,10 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.orm.ObjectRetrievalFailureException;
-import org.springframework.samples.petclinic.model.Pet;
+import org.springframework.samples.petclinic.domain.owner.Owner;
+import org.springframework.samples.petclinic.domain.pet.Pet;
 import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.model.Visit;
-import org.springframework.samples.petclinic.owner.Owner;
 import org.springframework.samples.petclinic.repository.OwnerRepository;
 import org.springframework.samples.petclinic.repository.PetRepository;
 import org.springframework.samples.petclinic.repository.VisitRepository;
@@ -93,7 +93,7 @@ public class JdbcPetRepositoryImpl implements PetRepository {
             throw new ObjectRetrievalFailureException(Pet.class, id);
         }
         Owner owner = this.ownerRepository.findById(ownerId);
-        return EntityUtils.getById(owner.getPets(), Pet.class, id);
+        return EntityUtils.getPetById(owner.getPets(), Pet.class, id);
     }
 
     @Override

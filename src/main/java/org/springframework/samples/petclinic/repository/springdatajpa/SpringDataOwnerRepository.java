@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 import org.springframework.data.repository.query.Param;
-import org.springframework.samples.petclinic.owner.Owner;
+import org.springframework.samples.petclinic.domain.owner.Owner;
 import org.springframework.samples.petclinic.repository.OwnerRepository;
 
 import java.util.Collection;

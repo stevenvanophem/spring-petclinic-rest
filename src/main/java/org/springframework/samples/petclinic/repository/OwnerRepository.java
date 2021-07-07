@@ -16,8 +16,8 @@
 package org.springframework.samples.petclinic.repository;
 
 import org.springframework.dao.DataAccessException;
+import org.springframework.samples.petclinic.domain.owner.Owner;
 import org.springframework.samples.petclinic.model.BaseEntity;
-import org.springframework.samples.petclinic.owner.Owner;
 
 import java.util.Collection;
 

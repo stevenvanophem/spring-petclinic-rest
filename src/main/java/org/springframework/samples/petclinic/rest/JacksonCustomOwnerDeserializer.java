@@ -21,7 +21,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import org.springframework.samples.petclinic.owner.Owner;
+import org.springframework.samples.petclinic.domain.owner.Owner;
 
 import java.io.IOException;
 

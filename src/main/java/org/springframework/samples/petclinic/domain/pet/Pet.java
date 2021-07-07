@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.model;
+package org.springframework.samples.petclinic.domain.pet;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -21,11 +21,14 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.samples.petclinic.owner.Owner;
+import org.springframework.samples.petclinic.domain.owner.Owner;
+import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.model.Visit;
 import org.springframework.samples.petclinic.rest.JacksonCustomPetDeserializer;
 import org.springframework.samples.petclinic.rest.JacksonCustomPetSerializer;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.*;
 
 /**
@@ -39,7 +42,11 @@ import java.util.*;
 @Table(name = "pets")
 @JsonSerialize(using = JacksonCustomPetSerializer.class)
 @JsonDeserialize(using = JacksonCustomPetDeserializer.class)
-public class Pet extends NamedEntity {
+public class Pet {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Integer id;
 
     @Column(name = "birth_date")
     @Temporal(TemporalType.DATE)
@@ -54,9 +61,32 @@ public class Pet extends NamedEntity {
     @JoinColumn(name = "owner_id")
     private Owner owner;
 
+    @Column(name = "name")
+    @NotEmpty
+    private String name;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet", fetch = FetchType.EAGER)
     private Set<Visit> visits;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
+    }
 
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
@@ -102,6 +132,11 @@ public class Pet extends NamedEntity {
     public void addVisit(Visit visit) {
         getVisitsInternal().add(visit);
         visit.setPet(this);
+    }
+
+    @JsonIgnore
+    public boolean isNew() {
+        return this.id == null;
     }
 
 }

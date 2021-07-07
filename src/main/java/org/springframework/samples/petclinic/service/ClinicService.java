@@ -16,8 +16,12 @@
 package org.springframework.samples.petclinic.service;
 
 import org.springframework.dao.DataAccessException;
-import org.springframework.samples.petclinic.model.*;
-import org.springframework.samples.petclinic.owner.Owner;
+import org.springframework.samples.petclinic.domain.owner.Owner;
+import org.springframework.samples.petclinic.domain.pet.Pet;
+import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.model.Specialty;
+import org.springframework.samples.petclinic.model.Vet;
+import org.springframework.samples.petclinic.model.Visit;
 
 import java.util.Collection;
 
