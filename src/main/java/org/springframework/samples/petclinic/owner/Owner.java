@@ -30,14 +30,6 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
 import java.util.*;
 
-/**
- * Simple JavaBean domain object representing an owner.
- *
- * @author Ken Krebs
- * @author Juergen Hoeller
- * @author Sam Brannen
- * @author Michael Isvy
- */
 @Entity
 @Table(name = "owners")
 @JsonSerialize(using = JacksonCustomOwnerSerializer.class)
