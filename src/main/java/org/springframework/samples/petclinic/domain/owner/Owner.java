@@ -21,9 +21,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.core.style.ToStringCreator;
+import org.springframework.samples.petclinic.adapter.in.rest.JacksonCustomOwnerDeserializer;
+import org.springframework.samples.petclinic.adapter.in.rest.JacksonCustomOwnerSerializer;
 import org.springframework.samples.petclinic.domain.pet.Pet;
-import org.springframework.samples.petclinic.rest.JacksonCustomOwnerDeserializer;
-import org.springframework.samples.petclinic.rest.JacksonCustomOwnerSerializer;
 
 import javax.persistence.*;
 import javax.validation.constraints.Digits;

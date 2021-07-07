@@ -17,14 +17,14 @@ package org.springframework.samples.petclinic.service.clinicService;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.samples.petclinic.adapter.out.EntityUtils;
+import org.springframework.samples.petclinic.application.ClinicService;
 import org.springframework.samples.petclinic.domain.owner.Owner;
 import org.springframework.samples.petclinic.domain.pet.Pet;
 import org.springframework.samples.petclinic.domain.pettype.PetType;
 import org.springframework.samples.petclinic.domain.speciality.Specialty;
 import org.springframework.samples.petclinic.domain.vet.Vet;
 import org.springframework.samples.petclinic.domain.visit.Visit;
-import org.springframework.samples.petclinic.service.ClinicService;
-import org.springframework.samples.petclinic.util.EntityUtils;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 

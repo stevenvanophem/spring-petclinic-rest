@@ -24,6 +24,7 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.orm.ObjectRetrievalFailureException;
+import org.springframework.samples.petclinic.adapter.out.EntityUtils;
 import org.springframework.samples.petclinic.domain.owner.Owner;
 import org.springframework.samples.petclinic.domain.owner.OwnerRepository;
 import org.springframework.samples.petclinic.domain.pet.Pet;
@@ -31,7 +32,6 @@ import org.springframework.samples.petclinic.domain.pet.PetRepository;
 import org.springframework.samples.petclinic.domain.pettype.PetType;
 import org.springframework.samples.petclinic.domain.visit.Visit;
 import org.springframework.samples.petclinic.domain.visit.VisitRepository;
-import org.springframework.samples.petclinic.util.EntityUtils;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;

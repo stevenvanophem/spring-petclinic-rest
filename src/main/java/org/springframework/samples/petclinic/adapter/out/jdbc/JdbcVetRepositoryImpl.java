@@ -25,10 +25,10 @@ import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.orm.ObjectRetrievalFailureException;
+import org.springframework.samples.petclinic.adapter.out.EntityUtils;
 import org.springframework.samples.petclinic.domain.speciality.Specialty;
 import org.springframework.samples.petclinic.domain.vet.Vet;
 import org.springframework.samples.petclinic.domain.vet.VetRepository;
-import org.springframework.samples.petclinic.util.EntityUtils;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;

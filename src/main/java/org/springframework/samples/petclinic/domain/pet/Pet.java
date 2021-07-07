@@ -21,11 +21,11 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.samples.petclinic.adapter.in.rest.JacksonCustomPetDeserializer;
+import org.springframework.samples.petclinic.adapter.in.rest.JacksonCustomPetSerializer;
 import org.springframework.samples.petclinic.domain.owner.Owner;
 import org.springframework.samples.petclinic.domain.pettype.PetType;
 import org.springframework.samples.petclinic.domain.visit.Visit;
-import org.springframework.samples.petclinic.rest.JacksonCustomPetDeserializer;
-import org.springframework.samples.petclinic.rest.JacksonCustomPetSerializer;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;

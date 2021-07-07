@@ -153,7 +153,7 @@ File -> Import -> Maven -> Existing Maven project
 
 | Layer | Source |
 |--|--|
-| REST API controllers | [REST folder](src/main/java/org/springframework/samples/petclinic/rest) |
+| REST API controllers | [REST folder](src/main/java/org/springframework/samples/petclinic/adapter/in/rest) |
 | Service | [ClinicServiceImpl.java](src/main/java/org/springframework/samples/petclinic/service/ClinicServiceImpl.java) |
 | JDBC | [jdbc folder](src/main/java/org/springframework/samples/petclinic/adapter/out/jdbc) |
 | JPA | [jpa folder](src/main/java/org/springframework/samples/petclinic/adapter/out/jpa) |
