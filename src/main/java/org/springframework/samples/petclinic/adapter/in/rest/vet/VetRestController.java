@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.adapter.in.rest;
+package org.springframework.samples.petclinic.adapter.in.rest.vet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.samples.petclinic.adapter.in.rest.BindingErrorsResponse;
 import org.springframework.samples.petclinic.application.clinic.ClinicService;
 import org.springframework.samples.petclinic.domain.speciality.Specialty;
 import org.springframework.samples.petclinic.domain.vet.Vet;

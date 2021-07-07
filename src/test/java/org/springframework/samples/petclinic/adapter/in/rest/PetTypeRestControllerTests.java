@@ -24,6 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.samples.petclinic.adapter.in.rest.pettype.PetTypeRestController;
 import org.springframework.samples.petclinic.application.clinic.ClinicService;
 import org.springframework.samples.petclinic.domain.pettype.PetType;
 import org.springframework.samples.petclinic.service.clinicService.ApplicationTestConfig;

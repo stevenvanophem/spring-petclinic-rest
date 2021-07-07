@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.samples.petclinic.adapter.in.rest.user.UserRestController;
 import org.springframework.samples.petclinic.application.user.UserService;
 import org.springframework.samples.petclinic.domain.user.User;
 import org.springframework.samples.petclinic.service.clinicService.ApplicationTestConfig;

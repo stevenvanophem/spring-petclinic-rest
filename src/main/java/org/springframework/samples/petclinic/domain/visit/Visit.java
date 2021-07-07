@@ -20,8 +20,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.samples.petclinic.adapter.in.rest.JacksonCustomVisitDeserializer;
-import org.springframework.samples.petclinic.adapter.in.rest.JacksonCustomVisitSerializer;
+import org.springframework.samples.petclinic.adapter.in.rest.visit.JacksonCustomVisitDeserializer;
+import org.springframework.samples.petclinic.adapter.in.rest.visit.JacksonCustomVisitSerializer;
 import org.springframework.samples.petclinic.domain.pet.Pet;
 
 import javax.persistence.*;
