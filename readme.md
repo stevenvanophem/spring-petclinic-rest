@@ -155,9 +155,9 @@ File -> Import -> Maven -> Existing Maven project
 |--|--|
 | REST API controllers | [REST folder](src/main/java/org/springframework/samples/petclinic/rest) |
 | Service | [ClinicServiceImpl.java](src/main/java/org/springframework/samples/petclinic/service/ClinicServiceImpl.java) |
-| JDBC | [jdbc folder](src/main/java/org/springframework/samples/petclinic/repository/jdbc) |
-| JPA | [jpa folder](src/main/java/org/springframework/samples/petclinic/repository/jpa) |
-| Spring Data JPA | [springdatajpa folder](src/main/java/org/springframework/samples/petclinic/repository/springdatajpa) |
+| JDBC | [jdbc folder](src/main/java/org/springframework/samples/petclinic/adapter/out/jdbc) |
+| JPA | [jpa folder](src/main/java/org/springframework/samples/petclinic/adapter/out/jpa) |
+| Spring Data JPA | [springdatajpa folder](src/main/java/org/springframework/samples/petclinic/adapter/out/springdatajpa) |
 | Tests | [AbstractClinicServiceTests.java](src/test/java/org/springframework/samples/petclinic/service/AbstractClinicServiceTests.java) |
 
 

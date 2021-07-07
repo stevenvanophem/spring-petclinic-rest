@@ -21,12 +21,17 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.samples.petclinic.domain.owner.Owner;
+import org.springframework.samples.petclinic.domain.owner.OwnerRepository;
 import org.springframework.samples.petclinic.domain.pet.Pet;
+import org.springframework.samples.petclinic.domain.pet.PetRepository;
 import org.springframework.samples.petclinic.domain.pettype.PetType;
+import org.springframework.samples.petclinic.domain.pettype.PetTypeRepository;
 import org.springframework.samples.petclinic.domain.speciality.Specialty;
+import org.springframework.samples.petclinic.domain.speciality.SpecialtyRepository;
 import org.springframework.samples.petclinic.domain.vet.Vet;
+import org.springframework.samples.petclinic.domain.vet.VetRepository;
 import org.springframework.samples.petclinic.domain.visit.Visit;
-import org.springframework.samples.petclinic.repository.*;
+import org.springframework.samples.petclinic.domain.visit.VisitRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
