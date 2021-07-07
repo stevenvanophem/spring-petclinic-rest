@@ -17,7 +17,6 @@ package org.springframework.samples.petclinic.domain.pet;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.domain.pettype.PetType;
-import org.springframework.samples.petclinic.model.BaseEntity;
 
 import java.util.Collection;
 import java.util.List;
@@ -54,7 +53,6 @@ public interface PetRepository {
      * Save a <code>Pet</code> to the data store, either inserting or updating it.
      *
      * @param pet the <code>Pet</code> to save
-     * @see BaseEntity#isNew
      */
     void save(Pet pet) throws DataAccessException;
 

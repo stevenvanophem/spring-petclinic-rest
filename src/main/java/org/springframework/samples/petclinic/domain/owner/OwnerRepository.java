@@ -16,7 +16,6 @@
 package org.springframework.samples.petclinic.domain.owner;
 
 import org.springframework.dao.DataAccessException;
-import org.springframework.samples.petclinic.model.BaseEntity;
 
 import java.util.Collection;
 
@@ -56,7 +55,6 @@ public interface OwnerRepository {
      * Save an <code>Owner</code> to the data store, either inserting or updating it.
      *
      * @param owner the <code>Owner</code> to save
-     * @see BaseEntity#isNew
      */
     void save(Owner owner) throws DataAccessException;
 
