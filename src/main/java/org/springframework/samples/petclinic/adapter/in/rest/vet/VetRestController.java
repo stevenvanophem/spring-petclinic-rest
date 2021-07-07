@@ -47,7 +47,7 @@ public class VetRestController {
 	private ClinicService clinicService;
 
     @PreAuthorize( "hasRole(@roles.VET_ADMIN)" )
-	@RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
+	@GetMapping
 	public ResponseEntity<Collection<Vet>> getAllVets(){
 		Collection<Vet> vets = new ArrayList<Vet>();
 		vets.addAll(this.clinicService.findAllVets());
@@ -58,7 +58,7 @@ public class VetRestController {
 	}
 
     @PreAuthorize( "hasRole(@roles.VET_ADMIN)" )
-	@RequestMapping(value = "/{vetId}", method = RequestMethod.GET, produces = "application/json")
+	@GetMapping(value = "/{vetId}")
 	public ResponseEntity<Vet> getVet(@PathVariable("vetId") int vetId){
 		Vet vet = this.clinicService.findVetById(vetId);
 		if(vet == null){

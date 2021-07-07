@@ -33,11 +33,6 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.util.Collection;
 
-/**
- * @author Vitaliy Fedoriv
- *
- */
-
 @RestController
 @CrossOrigin(exposedHeaders = "errors, content-type")
 @RequestMapping("api/pets")
@@ -47,7 +42,7 @@ public class PetRestController {
 	private ClinicService clinicService;
 
     @PreAuthorize( "hasRole(@roles.OWNER_ADMIN)" )
-	@RequestMapping(value = "/{petId}", method = RequestMethod.GET, produces = "application/json")
+	@GetMapping(value = "/{petId}")
 	public ResponseEntity<Pet> getPet(@PathVariable("petId") int petId){
 		Pet pet = this.clinicService.findPetById(petId);
 		if(pet == null){
@@ -57,7 +52,7 @@ public class PetRestController {
 	}
 
     @PreAuthorize( "hasRole(@roles.OWNER_ADMIN)" )
-	@RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
+	@GetMapping
 	public ResponseEntity<Collection<Pet>> getPets(){
 		Collection<Pet> pets = this.clinicService.findAllPets();
 		if(pets.isEmpty()){
@@ -67,13 +62,13 @@ public class PetRestController {
 	}
 
     @PreAuthorize( "hasRole(@roles.OWNER_ADMIN)" )
-	@RequestMapping(value = "/pettypes", method = RequestMethod.GET, produces = "application/json")
+	@GetMapping(value = "/pettypes")
 	public ResponseEntity<Collection<PetType>> getPetTypes(){
 		return new ResponseEntity<Collection<PetType>>(this.clinicService.findPetTypes(), HttpStatus.OK);
 	}
 
     @PreAuthorize( "hasRole(@roles.OWNER_ADMIN)" )
-	@RequestMapping(value = "", method = RequestMethod.POST, produces = "application/json")
+	@PostMapping
 	public ResponseEntity<Pet> addPet(@RequestBody @Valid Pet pet, BindingResult bindingResult, UriComponentsBuilder ucBuilder){
 		BindingErrorsResponse errors = new BindingErrorsResponse();
 		HttpHeaders headers = new HttpHeaders();
@@ -88,7 +83,7 @@ public class PetRestController {
 	}
 
     @PreAuthorize( "hasRole(@roles.OWNER_ADMIN)" )
-	@RequestMapping(value = "/{petId}", method = RequestMethod.PUT, produces = "application/json")
+	@PutMapping(value = "/{petId}")
 	public ResponseEntity<Pet> updatePet(@PathVariable("petId") int petId, @RequestBody @Valid Pet pet, BindingResult bindingResult){
 		BindingErrorsResponse errors = new BindingErrorsResponse();
 		HttpHeaders headers = new HttpHeaders();
@@ -110,7 +105,7 @@ public class PetRestController {
 	}
 
     @PreAuthorize( "hasRole(@roles.OWNER_ADMIN)" )
-	@RequestMapping(value = "/{petId}", method = RequestMethod.DELETE, produces = "application/json")
+	@DeleteMapping(value = "/{petId}")
 	@Transactional
 	public ResponseEntity<Void> deletePet(@PathVariable("petId") int petId){
 		Pet pet = this.clinicService.findPetById(petId);
